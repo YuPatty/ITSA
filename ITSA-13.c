@@ -1,3 +1,5 @@
+//尚未AC
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
