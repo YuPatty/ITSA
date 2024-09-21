@@ -13,8 +13,8 @@ int suit_rank(char suit){
 }
 
 int compare(const void *a, const void *b){
-    char *cardA = (char*)a;
-    char *cardB = (char*)b;
+    const char *cardA = (const char*)a;
+    const char *cardB = (const char*)b;
     
     //花色
     if (suit_rank(cardA[0]) != suit_rank(cardB[0])){
@@ -30,12 +30,13 @@ int compare(const void *a, const void *b){
 int main(){
     int stack;
     scanf("%d", &stack);  
+    getchar();  //消除換行符號
 
     for (int i = 0; i < stack; i++){
         char card[52][4];  //每疊最多52張牌，每張牌最多佔4個字元
         int count = 0;     //計算該疊牌的張數
 
-        while (scanf("%s", card[count]) == 1){
+        while(count < 52 && scanf("%s", card[count]) == 1){
             count++;
             if (getchar() == '\n'){ 
                 break;
